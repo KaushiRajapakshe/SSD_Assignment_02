@@ -16,4 +16,4 @@ open cmd on target folder
 run java -jar spring-boot-facebook-login-example-0.0.1-SNAPSHOT.jar command on cmd
 
 ## Test Project
-Log on to facebook with the administer access for project
+Log in to facebook with the Administrator access for project
