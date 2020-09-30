@@ -17,3 +17,4 @@ run java -jar spring-boot-facebook-login-example-0.0.1-SNAPSHOT.jar command on c
 
 ## Test Project
 Log in to facebook with the Administrator access for project
+Want to free 8080 port to run project
