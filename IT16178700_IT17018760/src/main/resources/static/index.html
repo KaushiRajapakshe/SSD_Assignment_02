@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>SSD Assignment</title>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="width=device-width"/>
+    <base href="/"/>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    /* style the container */
+    .container {
+        position: relative;
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px 0 30px 0;
+    }
+
+    /* style inputs and link buttons */
+    input,
+    .btn {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        border-radius: 4px;
+        margin: 5px 0;
+        opacity: 0.85;
+        display: inline-block;
+        font-size: 17px;
+        line-height: 20px;
+        text-decoration: none; /* remove underline from anchors */
+    }
+
+    input:hover,
+    .btn:hover {
+        opacity: 1;
+    }
+
+    /* add appropriate colors to fb, twitter and google buttons */
+    .fb {
+        background-color: #304e98;
+        color: white;
+        width: 250px;
+    }
+
+
+    footer {
+        text-align: center;
+        padding: 3px;
+        background-color: #c8c3c0;
+        color: #304e98;
+    }
+</style>
+
+
+<body>
+
+<div class="container">
+    <form action="/action_page.php">
+        <div class="row">
+
+            <h1 style="text-align:center">SSD Assignment 2 | OAuth 2.0 Framework </h1><br>
+            <h3 style="text-align:center">IT16178700 | IT17018760 </h3>
+
+            <center>
+                <div class="container unauthenticated">
+                    <h2 style="text-align:center">Login with Facebook </h2>
+                    <a href="/login" class="fb btn">
+                        <i class="fa fa-facebook fa-fw"></i> Login with Facebook
+                    </a>
+                </div>
+
+
+                <div class="container authenticated" style="display:none">
+                    <h4 style="color: #304e98;text-decoration: #dddddd"> Thank You . You Logged into Facebook as: <span
+                            id="user"></span></h4>
+                </div>
+            </center>
+        </div>
+    </form>
+</div>
+
+
+<script type="text/javascript">
+    $.get("/user", function (data) {
+        $("#user").html(data.userAuthentication.details.name);
+        $(".unauthenticated").hide()
+        $(".authenticated").show()
+    });
+
+</script>
+
+
+<br><br><br><br><br>
+
+<br><br><br><br><br>
+<footer>
+    <p>IT16178700 | IT17018760<br>
+        <a href="https://courseweb.sliit.lk">4th Year | Software Engineering</a></p>
+</footer>
+
+
+</body>
+</html>
